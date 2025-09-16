@@ -16,6 +16,34 @@ body {
     gap: 15px;
 }
 
+/* Buttons  */
+
+.black-btn {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.gray-btn {
+    background-color: #E3E3E3;
+    color: #000;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
 /* Header */
 
 header {
@@ -52,30 +80,22 @@ header .nav ul {
     align-items: center;
 }
 
-/* Buttons  */
+/* Banner */
 
-.black-btn {
-    background-color: #000;
-    color: #fff;
-    border: none;
-    padding: 10px 24px;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s;
+#banner {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
 }
 
-.gray-btn {
-    background-color: #E3E3E3;
-    color: #000;
-    border: none;
-    padding: 10px 24px;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s;
+#banner h1 {
+    font-size: 48px;
 }
+
+#banner p {
+    color: #757575;
+    padding: 15px 0px;
+}
+
