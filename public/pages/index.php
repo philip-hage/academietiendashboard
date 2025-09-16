@@ -1,4 +1,12 @@
-<?php include('../includes/header.php');?>
+<?php include('../includes/header.php');
+
+require_once __DIR__ . '/../../config/database.php';
+
+$sql = "SELECT id, unitNumber, studentId, classId FROM units";
+$stmt = $conn->prepare($sql);
+$stmt->execute();
+$units = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
 
 
 <section id="banner">
@@ -29,7 +37,19 @@
    </div>
 
   <div class="content">
-    
+    <?php foreach($units as $unit): ?>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo htmlspecialchars($unit['unitNumber']); ?></h5>
+                        <p class="card-text">
+                            Student ID: <?php echo htmlspecialchars($unit['studentId']); ?><br>
+                            Class ID: <?php echo htmlspecialchars($unit['classId']); ?>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
   </div>
 
 </section>
