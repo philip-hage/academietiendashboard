@@ -88,6 +88,7 @@ header .nav ul {
     justify-content: center;
     align-items: center;
     height: 400px;
+    position: relative;
 }
 
 #banner h1 {
@@ -97,5 +98,27 @@ header .nav ul {
 #banner p {
     color: #757575;
     padding: 15px 0px;
+}
+
+#banner .ballLeft {
+    width: 300px;
+    height: 300px;
+    background-color: #DA0466;
+    position: absolute;
+    left: -150px;
+    top: 90%;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+#banner .ballRight{
+    width: 300px;
+    height: 300px;
+    background-color: #DA0466;
+    position: absolute;
+    right: -150px;
+    top: 50%;
+    border-radius: 50%;
+    transform: translateY(-50%);
 }
 

@@ -15,6 +15,9 @@
         </div>
     </div>
 
+    <div class="ballLeft"></div>
+    <div class="ballRight"></div>
+
 </section>
 
 
