@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/../../config/database.php';
 
-$sql = "SELECT id, unitNumber, studentId, classId FROM units";
+$sql = "SELECT unitId, unitName, unitIsActive FROM units";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 $units = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -41,11 +41,9 @@ $units = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div class="col-md-4 mb-3">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title"><?php echo htmlspecialchars($unit['unitNumber']); ?></h5>
-                        <p class="card-text">
-                            Student ID: <?php echo htmlspecialchars($unit['studentId']); ?><br>
-                            Class ID: <?php echo htmlspecialchars($unit['classId']); ?>
-                        </p>
+                        <h5 class="card-title"><?php echo htmlspecialchars($unit['unitName']); ?></h5>
+                        <p class="card-text">Status: <?php echo $unit['unitIsActive'] ? 'Actief' : 'Inactief'; ?></p>
+                        <a href="units.php?id=<?php echo $unit['unitId']; ?>" class="btn btn-primary">Bekijk Unit</a>
                     </div>
                 </div>
             </div>
