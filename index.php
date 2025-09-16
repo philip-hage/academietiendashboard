@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $inputEmail = $_POST['userEmail'] ?? '';
     $inputPassword = $_POST['userPassword'] ?? '';
 
-    $sql = "SELECT * FROM users WHERE userEmail = :userEmail AND userPassword = :userPassword";
+    $sql = "SELECT * FROM teachers WHERE teacherEmail = :userEmail AND teacherPassword = :userPassword";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':userEmail', $inputEmail);
     $stmt->bindParam(':userPassword', $inputPassword);
