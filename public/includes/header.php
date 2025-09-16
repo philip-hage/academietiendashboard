@@ -20,11 +20,15 @@
         <div>
             <img src="../images/Academie_tien.svg" alt="">
         </div>
-        <div>
-            <div>
-
+        <div class="navbar">
+            <div class="info">
+                <ul>
+                    <li>Units</li>
+                    <li>Klassen</li>
+                    <li>Jaaroverzicht</li>
+                </ul>
             </div>
-            <div class="gap10">
+            <div class="gap15">
                 <div>
                     <button class="gray-btn">Login</button>
                 </div>

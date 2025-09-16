@@ -11,7 +11,7 @@ body {
 
 /* Standaard */
 
-.gap10 {
+.gap15 {
     display: flex;
     gap: 15px;
 }
@@ -31,6 +31,25 @@ header .nav {
 header .nav img {
     height: 30px;
     width: 100px;
+}
+
+header .nav .navbar {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+header .nav .navbar .info {
+    display: flex;
+}
+
+header .nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; 
+    padding: 0;
+    margin: 0;
+    align-items: center;
 }
 
 /* Buttons  */
