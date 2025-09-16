@@ -1,23 +1,39 @@
-<!DOCTYPE html>
-<html lang='en'>
-<head>
-   <meta charset='UTF-8'>
-   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-   <title>Titel</title>
-   <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
-   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css">
-</head>
+<?php include('../includes/header.php');?>
 
 
-<body>
+<section id="banner">
+    <div>
+        <div>
+            <h1>Welkom bij ons platform</h1>
+        </div>
+        <div class="banner-text">
+            <p>Ontdek de kracht van onze innovatieve oplossingen en <br> begin vandaag nog met het transformeren van je
+                werkflow.</p>
+        </div>
+        <div>
+            <button class="black-btn">Aan de slag</button>
+        </div>
+    </div>
 
-   <h1>Welkom to Academie Tien</h1>
-   
+    <div class="ballLeft"></div>
+    <div class="ballRight"></div>
 
-</body> 
+</section>
+
+<section id="units">
+
+   <div class="wave">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 120 1440 100">
+         <path d="M0,160L60,154.7C120,149,240,139,360,138.7C480,139,600,149,720,144C840,139,960,117,1080,122.7C1200,128,1320,150,1380,155L1440,160L1440,220L0,220Z"></path>
+      </svg>
+   </div>
+
+  <div class="content">
+    
+  </div>
+
+</section>
 
 
 
-</html>
+<?php include('../includes/footer.php');?>
