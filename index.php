@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $inputEmail = $_POST['userEmail'] ?? '';
     $inputPassword = $_POST['userPassword'] ?? '';
 
-    $sql = "SELECT * FROM teachers WHERE teacherEmail = :userEmail AND teacherPassword = :userPassword";
+    $sql = "SELECT * FROM teachers WHERE teacherEmail = :userEmail AND teacherPassword = :userPassword AND teacherIsActive = 1";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':userEmail', $inputEmail);
     $stmt->bindParam(':userPassword', $inputPassword);
@@ -71,6 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                         <div class="password-row">
                             <label for="password">Password</label>
+                            <a href="./public/pages/forgot_password.php">Forgot your password?</a>
                         </div>
                         <input name="userPassword" type="password" id="password">
 
