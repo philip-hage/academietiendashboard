@@ -87,8 +87,9 @@ header .nav ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 400px;
+    height: 500px;
     position: relative;
+    overflow: hidden;
 }
 
 #banner h1 {
@@ -106,7 +107,7 @@ header .nav ul {
     background-color: #DA0466;
     position: absolute;
     left: -150px;
-    top: 90%;
+    top: 70%;
     border-radius: 50%;
     transform: translateY(-50%);
 }
@@ -117,7 +118,7 @@ header .nav ul {
     background-color: #DA0466;
     position: absolute;
     right: -150px;
-    top: 50%;
+    top: 40%;
     border-radius: 50%;
     transform: translateY(-50%);
 }
