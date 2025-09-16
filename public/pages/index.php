@@ -29,8 +29,11 @@
    </div>
 
   <div class="content">
-    
-  </div>
+    <form class="searchbar">
+      <button type="submit"><i class="fas fa-search"></i></button>
+      <input type="text" placeholder="Zoek leerlingen" />
+    </form>
+</div>
 
 </section>
 
