@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Gegenereerd op: 16 sep 2025 om 07:32
--- Serverversie: 5.7.36
--- PHP-versie: 8.1.0
+-- Gegenereerd op: 16 sep 2025 om 17:45
+-- Serverversie: 9.1.0
+-- PHP-versie: 8.3.14
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `academietien`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `units`
+--
+
+DROP TABLE IF EXISTS `units`;
+CREATE TABLE IF NOT EXISTS `units` (
+  `id` varchar(10) NOT NULL,
+  `unitNumber` varchar(10) NOT NULL,
+  `studentId` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `classId` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Gegevens worden geëxporteerd voor tabel `units`
+--
+
+INSERT INTO `units` (`id`, `unitNumber`, `studentId`, `classId`) VALUES
+('133', '2', '23332', 2);
 
 -- --------------------------------------------------------
 
