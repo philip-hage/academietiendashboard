@@ -13,9 +13,9 @@ define('MAILHOG_PORT', 1025);
 // Je moet een App Password aanmaken in je Google account
 define('GMAIL_HOST', 'smtp.gmail.com');
 define('GMAIL_PORT', 587);
-define('GMAIL_USERNAME', 'philiphage3@gmail.com'); // ← VERVANG DIT met je echte Gmail adres
-define('GMAIL_PASSWORD', 'jstt uqkw gqur rqia');    // ← VERVANG DIT met je 16-karakter App Password
-define('GMAIL_FROM_EMAIL', 'philiphage3@gmail.com'); // ← Gebruik hetzelfde Gmail adres
+define('GMAIL_USERNAME', 'academietienofficial@gmail.com'); // ← VERVANG DIT met je echte Gmail adres
+define('GMAIL_PASSWORD', 'qrfb npxn lnao yghh');    // ← VERVANG DIT met je 16-karakter App Password
+define('GMAIL_FROM_EMAIL', 'academietienofficial@gmail.com'); // ← Gebruik hetzelfde Gmail adres
 define('GMAIL_FROM_NAME', 'Academie Tien');
 
 // Algemene email instellingen

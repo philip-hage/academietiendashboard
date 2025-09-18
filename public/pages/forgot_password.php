@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <body style='font-family: Arial, sans-serif;'>
                         <div style='max-width: 600px; margin: 0 auto; padding: 20px;'>
                             <h2 style='color: #333;'>🔒 Wachtwoord Reset Verzoek</h2>
-                            <p>Hallo,</p>
+                            <p>Hallo " . htmlspecialchars($user['teacherName']) . ",</p>
                             <p>Je hebt een verzoek ingediend om je wachtwoord te resetten voor je Academie Tien account.</p>
                             <p>Klik op de onderstaande knop om je wachtwoord te resetten:</p>
                             <div style='text-align: center; margin: 30px 0;'>
