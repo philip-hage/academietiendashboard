@@ -152,9 +152,10 @@ header .nav ul {
 }
 
 .searchbar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative;
+    width: 900px;
+    margin: 40px auto;
+    display: block;
 }
 
 .searchbar button {
@@ -180,5 +181,101 @@ header .nav ul {
 
 .searchbar button:hover {
     background: #222;
+}
+
+.searchbar-modern {
+    width: 100%;
+    max-width: 500px;
+    margin: 50px auto 30px auto;
+    position: relative;
+    z-index: 20;
+}
+
+.searchbar-modern-inner {
+    display: flex;
+    box-shadow: 0 4px 16px rgba(46,26,133,0.08);
+    border-radius: 32px;
+    background: linear-gradient(90deg, #2e1a85 0%, #da0466 100%);
+    overflow: hidden;
+}
+
+.searchbar-modern input[type="text"] {
+    flex: 1;
+    padding: 16px 20px 16px 20px;
+    border: none;
+    font-size: 1.1rem;
+    border-radius: 32px 0 0 32px;
+    outline: none;
+    background: rgba(255,255,255,0.95);
+    color: #2e1a85;
+    transition: background 0.2s;
+}
+
+.searchbar-modern input[type="text"]:focus {
+    background: #fff;
+}
+
+.searchbar-modern input[type="text"]::placeholder {
+    color: #bdbdbd;
+    font-style: italic;
+}
+
+.searchbar-modern-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.3rem;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    border-radius: 0 32px 32px 0;
+    display: flex;
+    align-items: center;
+}
+
+.searchbar-modern-btn:hover {
+    background: rgba(218,4,102,0.15);
+    color: #da0466;
+}
+
+#search-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #2e1a85;
+    border-top: none;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 8px 24px rgba(46,26,133,0.08);
+    z-index: 30;
+    display: none;
+    max-height: 260px;
+    overflow-y: auto;
+    animation: fadeIn 0.2s;
+}
+
+#search-dropdown div {
+    padding: 14px 24px;
+    cursor: pointer;
+    color: #2e1a85;
+    font-size: 1.05rem;
+    border-bottom: 1px solid #eee;
+    background: #fff;
+    transition: background 0.2s, color 0.2s;
+}
+
+#search-dropdown div:last-child {
+    border-bottom: none;
+}
+
+#search-dropdown div:hover {
+    background: #2e1a85;
+    color: #fff;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-8px);}
+    to { opacity: 1; transform: translateY(0);}
 }
 

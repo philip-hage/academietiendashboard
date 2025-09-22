@@ -6,6 +6,12 @@ $sql = "SELECT unitId, unitName, unitIsActive FROM units";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
 $units = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$sqlStudents = "SELECT studentId, studentName FROM students";
+$stmtStudents = $conn->prepare($sqlStudents);
+$stmtStudents->execute();
+$students = $stmtStudents->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
 
 
@@ -37,10 +43,15 @@ $units = $stmt->fetchAll(PDO::FETCH_ASSOC);
    </div>
 
   <div class="content">
-   <form class="searchbar">
-      <button type="submit"><i class="fas fa-search"></i></button>
-      <input type="text" placeholder="Zoek leerlingen" />
-    </form>
+<form class="searchbar-modern" autocomplete="off">
+    <div class="searchbar-modern-inner">
+        <input type="text" placeholder="Zoek leerlingen..." id="student-search" />
+        <button type="submit" class="searchbar-modern-btn">
+            <i class="fas fa-search"></i>
+        </button>
+    </div>
+    <div id="search-dropdown"></div>
+</form>
       <?php foreach($units as $unit): ?>
             <div class="col-md-4 mb-3">
                 <div class="card">
@@ -59,5 +70,8 @@ $units = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </section>
 
 
-
+<script>
+    // Zet de PHP-array van studenten om naar JS
+    window.students = <?php echo json_encode($students); ?>;
+</script>
 <?php include('../includes/footer.php');?>
