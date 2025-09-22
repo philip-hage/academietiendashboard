@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/config.php';
+
 // Set timezone to Amsterdam/Netherlands
 date_default_timezone_set('Europe/Amsterdam');
 
