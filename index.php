@@ -1,6 +1,25 @@
 <?php
+// Set timezone to Amsterdam/Netherlands
 session_start();
-require_once './config/database.php';
+if (isset($_SESSION['user_id'])) {
+    header("Location: ./public/pages/index.php");
+    exit();
+}
+date_default_timezone_set('Europe/Amsterdam');
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+
+$conn = new PDO("mysql:host=$servername;dbname=academietien", $username, $password);
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+// Set MySQL timezone to match PHP timezone
+$conn->exec("SET time_zone = '+01:00'"); // CET timezone (winter time)
+// Note: For automatic daylight saving time, you might want to use:
+// $conn->exec("SET time_zone = '" . date('P') . "'");
+
+
 
 $error_message = '';
 
@@ -16,8 +35,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($user) {
-        $_SESSION['user_id'] = $user['id'];
-        $_SESSION['userEmail'] = $user['userEmail'];
+        $_SESSION['user_id'] = $user['teacherId'];
+        $_SESSION['userEmail'] = $user['teacherEmail'];
         header("Location: ./public/pages/index.php");
         exit();
     } else {
