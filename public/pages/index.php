@@ -40,7 +40,7 @@ $units = $stmt->fetchAll(PDO::FETCH_ASSOC);
    <form class="searchbar">
       <button type="submit"><i class="fas fa-search"></i></button>
       <input type="text" placeholder="Zoek leerlingen" />
-    </form>
+   </form>
       <?php foreach($units as $unit): ?>
             <div class="col-md-4 mb-3">
                 <div class="card">
@@ -51,7 +51,7 @@ $units = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                 </div>
             </div>
-        <?php endforeach; ?>
+      <?php endforeach; ?>
   </div>
     
    </div>
