@@ -33,7 +33,9 @@
                     <button class="gray-btn">Login</button>
                 </div>
                 <div>
-                    <button class="black-btn">Login</button>
+                    <a href="../pages/logout.php">
+                    <button class="black-btn">logout</button>
+                    </a>
                 </div>
             </div>
         </div>
