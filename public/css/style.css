@@ -164,6 +164,7 @@ header .nav ul {
     justify-content: center;
     align-items: center;
     background: #2e1a85;
+    padding: 150px 0px;
 }
 
 .searchbar {
