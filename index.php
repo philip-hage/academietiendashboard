@@ -27,14 +27,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $inputEmail = $_POST['userEmail'] ?? '';
     $inputPassword = $_POST['userPassword'] ?? '';
 
-    $sql = "SELECT * FROM teachers WHERE teacherEmail = :userEmail AND teacherPassword = :userPassword AND teacherIsActive = 1";
+    // First get user by email only
+    $sql = "SELECT * FROM teachers WHERE teacherEmail = :userEmail AND teacherIsActive = 1";
     $stmt = $conn->prepare($sql);
     $stmt->bindParam(':userEmail', $inputEmail);
-    $stmt->bindParam(':userPassword', $inputPassword);
     $stmt->execute();
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($user) {
+    // Then verify the password using password_verify()
+    if ($user && password_verify($inputPassword, $user['teacherPassword'])) {
         $_SESSION['user_id'] = $user['teacherId'];
         $_SESSION['userEmail'] = $user['teacherEmail'];
         header("Location: ./public/pages/index.php");
@@ -90,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                         <div class="password-row">
                             <label for="password">Password</label>
-                            <a href="./public/pages/forgot_password.php">Forgot your password?</a>
+                            <a href="./public/pages/forgot_password.php">Wachtwoord vergeten?</a>
                         </div>
                         <input name="userPassword" type="password" id="password">
 

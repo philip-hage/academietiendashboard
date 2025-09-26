@@ -1,5 +1,19 @@
 <?php
-require_once '../../config/database.php';
+
+date_default_timezone_set('Europe/Amsterdam');
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+
+$conn = new PDO("mysql:host=$servername;dbname=academietien", $username, $password);
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+// Set MySQL timezone to match PHP timezone
+$conn->exec("SET time_zone = '+01:00'"); // CET timezone (winter time)
+// Note: For automatic daylight saving time, you might want to use:
+// $conn->exec("SET time_zone = '" . date('P') . "'");
+
 require_once '../../config/email.php';
 require_once '../../vendor/autoload.php';
 
@@ -95,7 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </html>";
 
                     $mail->send();
-                    $message = "Een reset link is verstuurd naar je email adres.";
+                    $message = "Als dit email adres bestaat, is er een reset link verstuurd.";
                     $message_type = "success";
                 } catch (Exception $e) {
                     $message = "Er is een fout opgetreden bij het versturen van de email: " . $mail->ErrorInfo;

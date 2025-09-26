@@ -1,5 +1,17 @@
 <?php
-require_once '../../config/database.php';
+date_default_timezone_set('Europe/Amsterdam');
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+
+$conn = new PDO("mysql:host=$servername;dbname=academietien", $username, $password);
+$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+// Set MySQL timezone to match PHP timezone
+$conn->exec("SET time_zone = '+01:00'"); // CET timezone (winter time)
+// Note: For automatic daylight saving time, you might want to use:
+// $conn->exec("SET time_zone = '" . date('P') . "'");
 
 $message = '';
 $message_type = '';
@@ -41,13 +53,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && $valid_token) {
         $message_type = "error";
     } else {
         try {
-            // Hash the new password (recommended for production)
-            // $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
+            // Hash the new password for security
+            $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
 
-            // Update password in database (using plain text for now to match your current system)
+            // Update password in database with hashed password
             $sql = "UPDATE teachers SET teacherPassword = :password WHERE teacherEmail = :email";
             $stmt = $conn->prepare($sql);
-            $stmt->bindParam(':password', $new_password);
+            $stmt->bindParam(':password', $hashed_password);
             $stmt->bindParam(':email', $reset_request['email']);
             $stmt->execute();
 
